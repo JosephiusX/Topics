@@ -1,10 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {Route, Switch, RouterProvider, BrowserRouter} from "react-router-dom";
-import {TopicsPage, ErrorPage } from "./Pages"
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+  Route
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Index /> },
+          {
+            path: "/create_topic",
+          },
+          {
+            path: "/edit_topic/:id",
+
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={AppRouter} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
