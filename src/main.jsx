@@ -7,16 +7,18 @@ import {
   Route
 } from "react-router-dom";
 
+import ErrorPage from "./error";
+import {Page} from './Topics'
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Page />,
     errorElement: <ErrorPage />,
     children: [
       {
         errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <Index /> },
           {
             path: "/create_topic",
           },

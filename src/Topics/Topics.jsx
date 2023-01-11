@@ -6,18 +6,27 @@ const Add = () => {
   )
 };
 
-const Edit = () => {
-  return (
-    <>
-      Edit
-    </>
-  );
-};
-
 const Form = () => {
   return (
     <>
       Form
+    </>
+  )
+}
+
+const Edit = () => {
+  return (
+    <>
+      Edit
+      <Form />
+    </>
+  );
+};
+
+const ListItem = () => {
+  return (
+    <>
+      ListItem
     </>
   )
 }
@@ -31,19 +40,10 @@ const List = () => {
   )
 };
 
-
-const ListItem = () => {
+export const Page = () => {
   return (
     <>
-      ListItem
-    </>
-  )
-}
-
-const Page = () => {
-  return (
-    <>
-
+      <List />
     </>
   )
 }
