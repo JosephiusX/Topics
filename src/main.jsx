@@ -2,13 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {
   createRoutesFromElements,
+  Route,
   createBrowserRouter,
   RouterProvider,
-  Route
+  NavLink,
+  Link
 } from "react-router-dom";
-
 import ErrorPage from "./error";
-import {Page} from './Topics'
+import {
+  Page, 
+  Add as AddTopic
+} from './Topics'
+
+<Link to="/create" >Create</Link>
+
+
 
 const router = createBrowserRouter([
   {
@@ -20,10 +28,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
-            path: "/create_topic",
+            path: "/create",
+            element: <AddTopic />
           },
           {
-            path: "/edit_topic/:id",
+            path: "/edit/:id",
 
           },
         ],
