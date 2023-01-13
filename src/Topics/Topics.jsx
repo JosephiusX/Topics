@@ -1,11 +1,49 @@
-import { Link } from 'react-router-dom'
+import { Link, Form } from 'react-router-dom'
 import { create } from 'zustand'
+
+const useTopicsStore = create((set) => ({
+  topics: ['topic one', 'topic two'],
+  addTopic: (e) => set((state) => ({ topics:  state.topics ,...e.target.value }))
+}))
+
+const TopicsForm = () => {
+
+  const topics = useTopicsStore((state) => state.topics)
+
+  onDescriptionChange = (e) => {
+    const description = e.target.value;
+    this.setState(() => ({ description }));
+  };
+  onSubmit = (e) => {
+    e.preventDefault();
+  }
+
+  return (
+    <>
+      <form >
+          <input
+            type="text"
+            placeholder="filter/input"
+            autoFocus
+            value={topics}
+            onChange={this.onDescriptionChange}
+          />
+          <button>Add topic</button>
+        </form>
+    </>
+  )
+}
 
 export const Add = () => {
   return (
     <>
-      Add
-      <Form />
+     <h1>Add Topic</h1>
+      <TopicsForm
+        onSubmit={(topic) => {
+          props.dispatch(addTopic(topic));
+          props.history.push('/topics');
+        }}
+      />
     </>
   )
 };
@@ -19,24 +57,7 @@ export const Add = () => {
 //   // $("#my-form").submit(); if you want to submit the form
 // });
 
-const Form = () => {
-  return (
-    <>
-      <form >
-          <input
-            type="text"
-            placeholder="filter/input"
-            autoFocus
-            // value={this.state.description}
-            // onChange={this.onDescriptionChange}
-          />
-          <button>Add topic</button>
-        </form>
-    </>
-  )
-}
-
-const Edit = () => {
+export const Edit = () => {
   return (
     <>
       Edit
@@ -57,6 +78,7 @@ const ListItem = () => {
 }
 
 const List = () => {
+
   return (
     <>
       <h1>Topics List</h1>

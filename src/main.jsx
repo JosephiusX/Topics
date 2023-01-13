@@ -11,7 +11,8 @@ import {
 import ErrorPage from "./error";
 import {
   Page, 
-  Add as AddTopic
+  Add as AddTopic,
+  Edit as EditTopic
 } from './Topics'
 
 <Link to="/create" >Create</Link>
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/edit/:id",
-
+            element: <EditTopic/>
           },
         ],
       },
