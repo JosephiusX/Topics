@@ -1,5 +1,5 @@
 import { Link, Form } from 'react-router-dom'
-import { create } from 'zustand'
+import { create , } from 'zustand'
 
 const useTopicsStore = create((set) => ({
   topics: ['topic one', 'topic two'],
@@ -48,14 +48,7 @@ export const Add = () => {
   )
 };
 
-    // multiple buttions for one form
-// $("#my-form button").click(function(ev){
-//   ev.preventDefault()// cancel form submission
-//   if($(this).attr("value")=="button-one"){
-//       //do button 1 thing
-//   }
-//   // $("#my-form").submit(); if you want to submit the form
-// });
+
 
 export const Edit = () => {
   return (
