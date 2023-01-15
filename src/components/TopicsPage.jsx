@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import TopicListFilters from './TopicListFilters';
-import TopicList from './TopicList';
+import ListFilters from './ListFilters';
+import List from './List';
 
 const TopicsPage = () => (
   <div>
     <NavLink to="/create_topic" activeClassName="is-active">Create Topic</NavLink>
-    <TopicListFilters />
-    <TopicList />
+    <ListFilters />
+    <List />
   </div>
 );
 

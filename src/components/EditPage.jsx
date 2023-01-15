@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect } from '@reduxjs/toolkit';
 import TopicForm from './TopicForm';
-import { editTopic, removeTopic } from '../../actions/topics';
+import { editTopic, removeTopic } from '../actions/topics';
 
-const EditTopicPage = (props) => {
+const EditPage = (props) => {
   return (
     <div>
       <TopicForm
@@ -27,4 +27,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(EditTopicPage);
+export default connect(mapStateToProps)(EditPage);

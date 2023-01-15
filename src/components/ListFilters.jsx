@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect } from '@reduxjs/toolkit';
 import { DateRangePicker } from 'react-dates';
-import { setTextFilter, sortByDate, setStartDate, setEndDate } from '../../actions/filters';
+import { setTextFilter, sortByDate, setStartDate, setEndDate } from '../actions/filters';
 
-class NoteListFilters extends React.Component {
+class ListFilters extends React.Component {
   state = {
     calendarFocused: null
   };
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(NoteListFilters);
+export default connect(mapStateToProps)(ListFilters);
